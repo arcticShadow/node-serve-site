@@ -7,6 +7,7 @@ var argv = require('minimist')(process.argv.slice(2));
 
 var port = argv.port || (process.env.PORT || 8080);
 var dir = argv.dir || 'dist';
+var debug = argv.debug !== undefined || false
 
 if(argv.help !== undefined || argv.h !== undefined) {
     console.log('Help'.yellow.underline);
@@ -27,7 +28,9 @@ var serve = serveStatic(dir, {'index': ['index.html', 'index.htm']});
 // Create server
 var server = http.createServer(function(req, res){
   var done = finalhandler(req, res);
-  console.log(req.method, req.url);
+  if(debug){
+    console.log(String('[' + req.method + ']').yellow + '\t' + String(req.url).green);
+  }
   serve(req, res, done);
 })
 
