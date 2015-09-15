@@ -1,0 +1,20 @@
+{
+  "name": "serve-site",
+  "version": "0.0.1",
+  "description": "A CLI module that will serve the directory you give it (Defaulting to 'dist', and default to process.env.PORT if you don't provide a --port",
+  "bin" : {
+    "serve-site" : "./index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "finalhandler": "^0.4.0",
+    "minimist": "^1.2.0",
+    "serve-static": "^1.10.0"
+  }
+}
