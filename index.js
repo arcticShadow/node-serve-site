@@ -5,7 +5,7 @@ var http = require('http');
 var serveStatic = require('serve-static');
 var argv = require('minimist')(process.argv.slice(2));
 
-var port = argv.port || process.env.PORT;
+var port = argv.port || (process.env.PORT || 8080);
 var dir = argv.dir || 'dist';
 
 if(argv.help !== undefined || argv.h !== undefined) {
