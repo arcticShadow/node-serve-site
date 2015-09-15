@@ -27,6 +27,7 @@ var serve = serveStatic(dir, {'index': ['index.html', 'index.htm']});
 // Create server
 var server = http.createServer(function(req, res){
   var done = finalhandler(req, res);
+  console.log(req.method, req.url);
   serve(req, res, done);
 })
 
